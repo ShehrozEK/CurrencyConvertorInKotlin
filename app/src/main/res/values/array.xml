@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="USD">
+        <item>UNITED STATES OF AMERICA</item>
+        <item>@drawable/us</item>
+        <item>US Dollar</item>
+    </string-array>
+    <string-array name="AED">
+        <item>UNITED ARAB EMIRATES</item>
+        <item>@drawable/uae</item>
+        <item>United Arab Emirates Dirham</item>
+    </string-array>
+    <string-array name="ARS">
+        <item>ARGENTINA</item>
+        <item>@drawable/argentina</item>
+        <item>Argentine Peso</item>
+    </string-array>
+    <string-array name="AUD">
+        <item>AUSTRALIA</item>
+        <item>@drawable/australia</item>
+        <item>Australian Dollar</item>
+    </string-array>
+    <string-array name="BGN">
+        <item>BULGARIA</item>
+        <item>@drawable/bulgaria</item>
+        <item>Bulgarian Lev</item>
+    </string-array>
+    <string-array name="BRL">
+        <item>BRAZIL</item>
+        <item>@drawable/brazil</item>
+        <item>Brazilian Real</item>
+    </string-array>
+    <string-array name="BSD">
+        <item>BAHAMAS</item>
+        <item>@drawable/bahamas</item>
+        <item>Bahamian Dollar</item>
+    </string-array>
+    <string-array name="CAD">
+        <item>CANADA</item>
+        <item>@drawable/canada</item>
+        <item>Canadian Dollar</item>
+    </string-array>
+    <string-array name="CHF">
+        <item>SWITZERLAND</item>
+        <item>@drawable/switzerland</item>
+        <item>Swiss Franc</item>
+    </string-array>
+    <string-array name="CLP">
+        <item>CHILE</item>
+        <item>@drawable/chile</item>
+        <item>Chilean Peso</item>
+    </string-array>
+    <string-array name="CNY">
+        <item>CHINA</item>
+        <item>@drawable/china</item>
+        <item>Yuan Renminbi</item>
+    </string-array>
+    <string-array name="COP">
+        <item>COLOMBIA</item>
+        <item>@drawable/colombia</item>
+        <item>Colombian Peso</item>
+    </string-array>
+    <string-array name="CZK">
+        <item>CZECH REPUBLIC</item>
+        <item>@drawable/czech_republic</item>
+        <item>Czech Koruna</item>
+    </string-array>
+    <string-array name="DKK">
+        <item>SWEDEN</item>
+        <item>@drawable/sweden</item>
+        <item>Danish Krone</item>
+    </string-array>
+    <string-array name="DOP">
+        <item>DOMINICAN REPUBLIC</item>
+        <item>@drawable/dominican_republic</item>
+        <item>Dominican Peso</item>
+    </string-array>
+    <string-array name="EGP">
+        <item>EGYPT</item>
+        <item>@drawable/egypt</item>
+        <item>Egyptian Pound</item>
+    </string-array>
+    <string-array name="EUR">
+        <item>EUROPEAN UNION</item>
+        <item>@drawable/european_union</item>
+        <item>Euro</item>
+    </string-array>
+    <string-array name="FJD">
+        <item>FIJI</item>
+        <item>@drawable/fiji</item>
+        <item>Fiji Dollar</item>
+    </string-array>
+    <string-array name="GBP">
+        <item>GUERNSEY</item>
+        <item>@drawable/guernsey</item>
+        <item>Pound Sterling</item>
+    </string-array>
+    <string-array name="GTQ">
+        <item>GUATEMALA</item>
+        <item>@drawable/guatemala</item>
+        <item>Guatemalan Quetzal</item>
+    </string-array>
+    <string-array name="HKD">
+        <item>HONG KONG</item>
+        <item>@drawable/hong_kong</item>
+        <item>Hong Kong Dollar</item>
+    </string-array>
+    <string-array name="HRK">
+        <item>CROATIA</item>
+        <item>@drawable/croatia</item>
+        <item>Croatian Kuna</item>
+    </string-array>
+    <string-array name="HUF">
+        <item>HUNGARY</item>
+        <item>@drawable/hungary</item>
+        <item>Hungarian Forint</item>
+    </string-array>
+    <string-array name="IDR">
+        <item>INDONESIA</item>
+        <item>@drawable/indonesia</item>
+        <item>Indonesian Rupiah</item>
+    </string-array>
+    <string-array name="ILS">
+        <item>ISRAEL</item>
+        <item>@drawable/israel</item>
+        <item>New Israeli Sheqel</item>
+    </string-array>
+    <string-array name="INR">
+        <item>INDIA</item>
+        <item>@drawable/india</item>
+        <item>Indian Rupee</item>
+    </string-array>
+    <string-array name="ISK">
+        <item>ICELAND</item>
+        <item>@drawable/iceland</item>
+        <item>Iceland Krona</item>
+    </string-array>
+    <string-array name="JPY">
+        <item>JAPAN</item>
+        <item>@drawable/japan</item>
+        <item>Japanese Yen</item>
+    </string-array>
+    <string-array name="KRW">
+        <item>SOUTH KOREA</item>
+        <item>@drawable/south_korea</item>
+        <item>South Korean Won</item>
+    </string-array>
+    <string-array name="KZT">
+        <item>KAZAKHSTAN</item>
+        <item>@drawable/kazakhstan</item>
+        <item>Kazakhstani Tenge</item>
+    </string-array>
+    <string-array name="MXN">
+        <item>MEXICO</item>
+        <item>@drawable/mexico</item>
+        <item>Mexican Peso</item>
+    </string-array>
+    <string-array name="MYR">
+        <item>MALAYSIA</item>
+        <item>@drawable/malaysia</item>
+        <item>Malaysian Ringgit</item>
+    </string-array>
+    <string-array name="NOK">
+        <item>NORWAY</item>
+        <item>@drawable/norway</item>
+        <item>Norwegian Krone</item>
+    </string-array>
+    <string-array name="NZD">
+        <item>NEW ZEALAND</item>
+        <item>@drawable/new_zealand</item>
+        <item>New Zealand Dollar</item>
+    </string-array>
+    <string-array name="PAB">
+        <item>PANAMA</item>
+        <item>@drawable/panama</item>
+        <item>Panamanian Balboa</item>
+    </string-array>
+    <string-array name="PEN">
+        <item>PERU</item>
+        <item>@drawable/peru</item>
+        <item>Peruvian Sol</item>
+    </string-array>
+    <string-array name="PHP">
+        <item>PHILIPPINES</item>
+        <item>@drawable/philippines</item>
+        <item>Philippine Peso</item>
+    </string-array>
+    <string-array name="PKR">
+        <item>PAKISTAN</item>
+        <item>@drawable/pakistan</item>
+        <item>Pakistani Rupee</item>
+    </string-array>
+    <string-array name="PLN">
+        <item>POLAND</item>
+        <item>@drawable/poland</item>
+        <item>Polish Zloty</item>
+    </string-array>
+    <string-array name="PYG">
+        <item>PARAGUAY</item>
+        <item>@drawable/paraguay</item>
+        <item>Paraguayan Guarani</item>
+    </string-array>
+    <string-array name="RON">
+        <item>ROMANIA</item>
+        <item>@drawable/romania</item>
+        <item>Romanian Leu</item>
+    </string-array>
+    <string-array name="RUB">
+        <item>RUSSIA</item>
+        <item>@drawable/russia</item>
+        <item>Russian Ruble</item>
+    </string-array>
+    <string-array name="SAR">
+        <item>SAUDI ARABIA</item>
+        <item>@drawable/saudi_arabia</item>
+        <item>Saudi Riyal</item>
+    </string-array>
+    <string-array name="SEK">
+        <item>SWEDEN</item>
+        <item>@drawable/sweden</item>
+        <item>Swedish Krona</item>
+    </string-array>
+    <string-array name="SGD">
+        <item>SINGAPORE</item>
+        <item>@drawable/singapore</item>
+        <item>Singapore Dollar</item>
+    </string-array>
+    <string-array name="THB">
+        <item>THAILAND</item>
+        <item>@drawable/thailand</item>
+        <item>Thai Baht</item>
+    </string-array>
+    <string-array name="TRY">
+        <item>TURKEY</item>
+        <item>@drawable/turkey</item>
+        <item>Turkish Lira</item>
+    </string-array>
+    <string-array name="TWD">
+        <item>TAIWAN</item>
+        <item>@drawable/taiwan</item>
+        <item>New Taiwan Dollar</item>
+    </string-array>
+    <string-array name="UAH">
+        <item>UKRAINE</item>
+        <item>@drawable/ukraine</item>
+        <item>Ukrainian Hryvnia</item>
+    </string-array>
+    <string-array name="UYU">
+        <item>URUGUAY</item>
+        <item>@drawable/uruguay</item>
+        <item>Peso Uruguayo</item>
+    </string-array>
+    <string-array name="VND">
+        <item>VIETNAM</item>
+        <item>@drawable/vietnam</item>
+        <item>Vietnamese Dong</item>
+    </string-array>
+    <string-array name="ZAR">
+        <item>SOUTH AFRICA</item>
+        <item>@drawable/south_africa</item>
+        <item>South African Rand</item>
+    </string-array>
+
+    <array name="countries">
+        <item>@array/USD</item>
+        <item>@array/AED</item>
+        <item>@array/ARS</item>
+        <item>@array/AUD</item>
+        <item>@array/BGN</item>
+        <item>@array/BRL</item>
+        <item>@array/BSD</item>
+        <item>@array/CAD</item>
+        <item>@array/CHF</item>
+        <item>@array/CLP</item>
+        <item>@array/CNY</item>
+        <item>@array/COP</item>
+        <item>@array/CZK</item>
+        <item>@array/DKK</item>
+        <item>@array/DOP</item>
+        <item>@array/EGP</item>
+        <item>@array/EUR</item>
+        <item>@array/FJD</item>
+        <item>@array/GBP</item>
+        <item>@array/GTQ</item>
+        <item>@array/HKD</item>
+        <item>@array/HRK</item>
+        <item>@array/HUF</item>
+        <item>@array/IDR</item>
+        <item>@array/ILS</item>
+        <item>@array/INR</item>
+        <item>@array/ISK</item>
+        <item>@array/JPY</item>
+        <item>@array/KRW</item>
+        <item>@array/KZT</item>
+        <item>@array/MXN</item>
+        <item>@array/MYR</item>
+        <item>@array/NOK</item>
+        <item>@array/NZD</item>
+        <item>@array/PAB</item>
+        <item>@array/PEN</item>
+        <item>@array/PHP</item>
+        <item>@array/PKR</item>
+        <item>@array/PLN</item>
+        <item>@array/PYG</item>
+        <item>@array/RON</item>
+        <item>@array/RUB</item>
+        <item>@array/SAR</item>
+        <item>@array/SEK</item>
+        <item>@array/SGD</item>
+        <item>@array/THB</item>
+        <item>@array/TRY</item>
+        <item>@array/TWD</item>
+        <item>@array/UAH</item>
+        <item>@array/UYU</item>
+        <item>@array/VND</item>
+        <item>@array/ZAR</item>
+    </array>
+</resources>
