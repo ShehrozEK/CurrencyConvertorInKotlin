@@ -1,17 +1,21 @@
 package shehroz.com.currencyconvertorinkotlin
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
+import java.util.*
 
 class PrimaryFragment(appContext: AppContext): BaseFragment(appContext),AdapterView.OnItemSelectedListener {
     var appContext:AppContext = appContext
     lateinit var currencyTextView : TextView
     var simpleCursorAdapter : SpinnerCustomAdapter? = null
+    var timer : CountDownTimer? = null
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
@@ -32,6 +36,18 @@ class PrimaryFragment(appContext: AppContext): BaseFragment(appContext),AdapterV
         simpleCursorAdapter = SpinnerCustomAdapter(appContext.getContext(),appContext.getCountriesHashMap())
         countrySpinner.adapter = simpleCursorAdapter
         countrySpinner.onItemSelectedListener = this
+        view.findViewById<Button>(R.id.convert).setOnClickListener(View.OnClickListener {
+            if(currencyTextView.text.isEmpty()){
+                timer = object:CountDownTimer(5000,1000){
+                    override fun onFinish() {
+                    }
+
+                    override fun onTick(p0: Long) {
+                        currencyTextView.setBackgroundResource(R.drawable.error_bg)
+                    }
+                }.start()
+            }
+        })
         return view
     }
 }
