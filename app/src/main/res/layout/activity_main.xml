@@ -6,13 +6,26 @@
     android:layout_height="match_parent"
     tools:context="shehroz.com.currencyconvertorinkotlin.MainActivity">
 
+   <TextView
+       android:id="@+id/title"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:fontFamily="monospace"
+       android:text="@string/app_name"
+       android:textAppearance="?android:textAppearanceLarge"
+       android:textStyle="bold"
+       app:layout_constraintBottom_toTopOf="@id/frameLayout"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frameLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+       android:id="@+id/frameLayout"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

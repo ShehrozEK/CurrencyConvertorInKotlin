@@ -4,18 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     tools:context=".PrimaryFragment">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:fontFamily="monospace"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:text="Currency Converter" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,20 +18,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:spinnerMode="dropdown"/>
+            android:background="@drawable/spinner_bg"
+            android:spinnerMode="dropdown" />
 
         <LinearLayout
+            android:id="@+id/currencyAmountViewGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="5dp"
             android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Enter Amount"
                 android:inputType="numberDecimal"
-                android:maxLength="10"
-                android:hint="Enter Amount" />
+                android:maxLength="10" />
+
             <TextView
                 android:id="@+id/currency"
                 android:layout_width="wrap_content"
@@ -50,6 +48,18 @@
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textStyle="bold" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:text="*Please fill out this field"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@android:color/holo_red_light"
+            android:visibility="gone"
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/convert"
