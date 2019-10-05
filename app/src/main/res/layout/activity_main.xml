@@ -14,18 +14,30 @@
        android:text="@string/app_name"
        android:textAppearance="?android:textAppearanceLarge"
        android:textStyle="bold"
-       app:layout_constraintBottom_toTopOf="@id/frameLayout"
+       app:layout_constraintBottom_toTopOf="@id/primaryFragment"
        app:layout_constraintLeft_toLeftOf="parent"
        app:layout_constraintRight_toRightOf="parent"
        app:layout_constraintTop_toTopOf="parent" />
 
-   <FrameLayout
-       android:id="@+id/frameLayout"
+   <fragment
+       android:id="@+id/primaryFragment"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:name="shehroz.com.currencyconvertorinkotlin.PrimaryFragment"
+       app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/title"
+       tools:layout="@layout/fragment_primary"/>
+
+   <fragment
+       android:id="@+id/secondaryFragment"
        android:layout_width="match_parent"
        android:layout_height="0dp"
+       android:name="shehroz.com.currencyconvertorinkotlin.SecondaryFragment"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintLeft_toLeftOf="parent"
        app:layout_constraintRight_toRightOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/title" />
+       app:layout_constraintTop_toBottomOf="@id/primaryFragment"
+       tools:layout="@layout/fragment_secondary"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
