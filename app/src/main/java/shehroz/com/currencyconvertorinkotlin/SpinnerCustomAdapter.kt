@@ -15,10 +15,12 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import java.io.File
+import java.util.*
+import kotlin.collections.HashMap
 
-class SpinnerCustomAdapter(context: Context,hashMap: HashMap<String,Country>): BaseAdapter() {
+class SpinnerCustomAdapter(context: Context,sortedMap: Map<String, Country>): BaseAdapter() {
     var context:Context = context
-    var countryMap:HashMap<String,Country> = hashMap
+    private var countryMap:Map<String,Country> = sortedMap
 
     override fun isEmpty(): Boolean {
        return countryMap.isEmpty()

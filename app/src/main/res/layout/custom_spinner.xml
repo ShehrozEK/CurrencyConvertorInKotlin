@@ -9,7 +9,8 @@
         android:id="@+id/countryFlag"
         android:layout_width="0dp"
         android:layout_height="35dp"
-        android:layout_weight="0.3" />
+        android:layout_weight="0.3"
+        android:contentDescription="@string/country_flag_content_description"/>
 
     <TextView
         android:id="@+id/countryName"

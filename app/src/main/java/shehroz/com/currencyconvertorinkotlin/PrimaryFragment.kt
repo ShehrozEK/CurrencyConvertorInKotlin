@@ -19,14 +19,20 @@ import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doOnTextChanged
 import java.util.*
 
-class PrimaryFragment(appContext: AppContext): BaseFragment(appContext),AdapterView.OnItemSelectedListener,Animation.AnimationListener {
-    var appContext:AppContext = appContext
+class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Animation.AnimationListener {
+    lateinit var appContext:AppContext
     lateinit var currencyTextView : TextView
     lateinit var errorTextView: TextView
     lateinit var currencyAmount : EditText
     lateinit var currencyAmountViewGroup: LinearLayout
     lateinit var blinkAnim : Animation
     var simpleCursorAdapter : SpinnerCustomAdapter? = null
+    var treeMap: TreeMap<String, Country> = TreeMap()
+
+    constructor(appContext: AppContext):this(){
+        this.appContext = appContext
+        BaseFragment(appContext)
+    }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {}
 
@@ -46,7 +52,7 @@ class PrimaryFragment(appContext: AppContext): BaseFragment(appContext),AdapterV
         currencyAmount = view.findViewById<EditText>(R.id.amount)
         currencyAmountViewGroup = view.findViewById<LinearLayout>(R.id.currencyAmountViewGroup)
         val countrySpinner = view.findViewById<Spinner>(R.id.countrySpinner)
-        simpleCursorAdapter = SpinnerCustomAdapter(appContext.getContext(),appContext.getCountriesHashMap())
+        simpleCursorAdapter = SpinnerCustomAdapter(context!!.applicationContext,getCountriesHashMap())
         countrySpinner.adapter = simpleCursorAdapter
         countrySpinner.onItemSelectedListener = this
         blinkAnim = AnimationUtils.loadAnimation(context,R.anim.blink)
@@ -88,7 +94,27 @@ class PrimaryFragment(appContext: AppContext): BaseFragment(appContext),AdapterV
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
         }
     }
+
+    private fun getCountriesHashMap(): Map<String, Country> {
+        if(treeMap.size<=0) {
+            val typedArray = resources.obtainTypedArray(R.array.countries)
+            for (i in 0 until typedArray.length()) {
+                val id  = typedArray.getResourceId(i,0)
+                if(id>0){
+                    val arr = resources.getStringArray(id) as Array<String>
+                    val arrName = resources.getResourceEntryName(id) as String
+                    val country = Country()
+                    country.countryName = arr[0]
+                    country.countryFlag = arr[1]
+                    country.countryCurrency = arr[2]
+                    treeMap[arrName] = country
+                }
+            }
+            typedArray.recycle()
+        }
+        return treeMap.toList().sortedBy { (_,country)-> country.countryName}.toMap()
+    }
+
 }

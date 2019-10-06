@@ -9,5 +9,4 @@ interface AppContext {
     fun showToast(text : String,duration:Int)
     fun getContext(): Context
     fun getResponseFromNetwork(url: URL):String
-    fun getCountriesHashMap(): HashMap<String, Country>
 }

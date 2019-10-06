@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="shehroz.com.currencyconvertorinkotlin.MainActivity">
+    android:background="@android:color/darker_gray"
+    tools:context=".MainActivity">
 
    <TextView
        android:id="@+id/title"
@@ -26,6 +27,7 @@
        android:name="shehroz.com.currencyconvertorinkotlin.PrimaryFragment"
        app:layout_constraintLeft_toLeftOf="parent"
        app:layout_constraintRight_toRightOf="parent"
+       android:layout_margin="@dimen/smallestMargin"
        app:layout_constraintTop_toBottomOf="@id/title"
        tools:layout="@layout/fragment_primary"/>
 
