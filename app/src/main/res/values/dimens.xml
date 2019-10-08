@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardCornerRadius">15dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="smallestMargin">12dp</dimen>
+    <dimen name="mediumMargin">16dp</dimen>
+    <dimen name="smallestPadding">8dp</dimen>
+</resources>
