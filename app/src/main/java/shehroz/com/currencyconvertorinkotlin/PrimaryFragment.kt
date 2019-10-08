@@ -140,9 +140,4 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
         return ""
     }
 
-//    inner class runInBackground: AsyncTask<URL, Void, Void>() {
-//        override fun doInBackground(vararg p0: URL?): Void? {
-//            getResponseFromNetwork(p0[0]!!)
-//        }
-//    }
 }
