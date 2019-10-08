@@ -19,16 +19,7 @@ open class BaseActivity : AppCompatActivity(),AppContext {
     override fun showToast(text: String,duration: Int) {
         Toast.makeText(this,text, duration).show()
     }
-    override fun getResponseFromNetwork(url: URL):String {
-        val httpURLConnection = url.openConnection() as HttpURLConnection
-        var inputStream = httpURLConnection.inputStream
-        val scanner = Scanner(inputStream)
-        scanner.useDelimiter("\\A")
-        while(scanner.hasNext()){
-            return scanner.next()
-        }
-        return ""
-    }
+
     override fun getContext(): Context {
         return applicationContext
     }

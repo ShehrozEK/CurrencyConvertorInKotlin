@@ -8,7 +8,7 @@
     <string-array name="AED">
         <item>UNITED ARAB EMIRATES</item>
         <item>@drawable/uae</item>
-        <item>United Arab Emirates Dirham</item>
+        <item>Dirham</item>
     </string-array>
     <string-array name="ARS">
         <item>ARGENTINA</item>

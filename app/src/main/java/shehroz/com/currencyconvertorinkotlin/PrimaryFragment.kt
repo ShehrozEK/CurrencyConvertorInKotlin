@@ -2,6 +2,7 @@ package shehroz.com.currencyconvertorinkotlin
 
 import android.content.Context
 import android.graphics.PorterDuff
+import android.os.AsyncTask
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
@@ -17,6 +18,10 @@ import android.widget.*
 import androidx.core.content.getSystemService
 import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doOnTextChanged
+import java.io.IOException
+import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
 import java.util.*
 
 class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Animation.AnimationListener {
@@ -63,6 +68,9 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
                 currencyAmountViewGroup.setBackgroundResource(R.drawable.error_bg)
                 currencyAmount.clearFocus()
                 currencyAmountViewGroup.startAnimation(blinkAnim)
+            }
+            else{
+                getResponseFromNetwork(formURL(currencyTextView.text.toString()))
             }
         })
         currencyAmount.addTextChangedListener(textWatcher)
@@ -117,4 +125,24 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
         return treeMap.toList().sortedBy { (_,country)-> country.countryName}.toMap()
     }
 
+    private fun formURL(urlParameter:String): URL {
+        return URL(resources.getString(R.string.url).plus(urlParameter))
+    }
+
+    private fun getResponseFromNetwork(url: URL):String {
+        val httpURLConnection = url.openConnection() as HttpURLConnection
+        val inputStream : InputStream = httpURLConnection.inputStream
+        val scanner = Scanner(inputStream)
+        scanner.useDelimiter("\\A")
+        while(scanner.hasNext()){
+            return scanner.next()
+        }
+        return ""
+    }
+
+//    inner class runInBackground: AsyncTask<URL, Void, Void>() {
+//        override fun doInBackground(vararg p0: URL?): Void? {
+//            getResponseFromNetwork(p0[0]!!)
+//        }
+//    }
 }

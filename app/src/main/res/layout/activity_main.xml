@@ -24,10 +24,11 @@
        android:id="@+id/primaryFragment"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
+       android:layout_margin="@dimen/smallestMargin"
        android:name="shehroz.com.currencyconvertorinkotlin.PrimaryFragment"
        app:layout_constraintLeft_toLeftOf="parent"
        app:layout_constraintRight_toRightOf="parent"
-       android:layout_margin="@dimen/smallestMargin"
+       app:layout_constraintBottom_toTopOf="@id/secondaryFragment"
        app:layout_constraintTop_toBottomOf="@id/title"
        tools:layout="@layout/fragment_primary"/>
 

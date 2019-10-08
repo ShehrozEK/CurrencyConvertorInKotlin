@@ -24,9 +24,14 @@
         android:id="@+id/countryCurrency"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.7"
+        android:layout_weight="0.6"
         android:textSize="12sp"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|end"
         android:textColor="@android:color/darker_gray"
         android:enabled="false"/>
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.1"
+        />
 </LinearLayout>

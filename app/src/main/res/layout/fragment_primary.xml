@@ -21,14 +21,18 @@
         android:padding="@dimen/smallestPadding"
         android:orientation="vertical">
 
-        <Spinner
-            android:id="@+id/countrySpinner"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:background="@drawable/spinner_bg"
-            android:spinnerMode="dropdown" />
-
+            android:orientation="horizontal">
+            <Spinner
+                android:id="@+id/countrySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
         <LinearLayout
             android:id="@+id/currencyAmountViewGroup"
             android:layout_width="match_parent"

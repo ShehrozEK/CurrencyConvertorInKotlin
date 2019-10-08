@@ -8,5 +8,4 @@ interface AppContext {
     fun loadFragment(layoutId : Int, fragment : Fragment)
     fun showToast(text : String,duration:Int)
     fun getContext(): Context
-    fun getResponseFromNetwork(url: URL):String
 }
