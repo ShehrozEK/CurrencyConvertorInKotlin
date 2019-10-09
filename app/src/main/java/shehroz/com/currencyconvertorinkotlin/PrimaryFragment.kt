@@ -6,6 +6,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import android.widget.*
 import androidx.core.content.getSystemService
 import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doOnTextChanged
+import com.google.gson.Gson
 import java.io.IOException
 import java.io.InputStream
 import java.net.HttpURLConnection
@@ -70,7 +72,8 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
                 currencyAmountViewGroup.startAnimation(blinkAnim)
             }
             else{
-                getResponseFromNetwork(formURL(currencyTextView.text.toString()))
+                val asyncTask = RunInBackground()
+                asyncTask.execute(formURL(currencyTextView.text.toString()))
             }
         })
         currencyAmount.addTextChangedListener(textWatcher)
@@ -140,4 +143,19 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
         return ""
     }
 
+    inner class RunInBackground : AsyncTask<URL, Void, String>() {
+        override fun doInBackground(vararg params: URL?): String {
+            return getResponseFromNetwork(params[0]!!)
+        }
+        override fun onPostExecute(result: String?) {
+            if (!TextUtils.isEmpty(result)) {
+                val model = Gson().fromJson(result,Model::class.java)
+                populateRecyclerView(model)
+            }
+        }
+    }
+
+    private fun populateRecyclerView(model: Model){
+
+    }
 }
