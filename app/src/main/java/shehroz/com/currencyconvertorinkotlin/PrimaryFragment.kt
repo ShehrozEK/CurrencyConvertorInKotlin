@@ -19,6 +19,7 @@ import android.widget.*
 import androidx.core.content.getSystemService
 import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doOnTextChanged
+import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import java.io.IOException
 import java.io.InputStream
@@ -26,8 +27,8 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
 
-class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Animation.AnimationListener {
-    lateinit var appContext:AppContext
+class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation.AnimationListener {
+    var appContext:AppContext? = null
     lateinit var currencyTextView : TextView
     lateinit var errorTextView: TextView
     lateinit var currencyAmount : EditText
@@ -35,11 +36,6 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
     lateinit var blinkAnim : Animation
     var simpleCursorAdapter : SpinnerCustomAdapter? = null
     var treeMap: TreeMap<String, Country> = TreeMap()
-
-    constructor(appContext: AppContext):this(){
-        this.appContext = appContext
-        BaseFragment(appContext)
-    }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {}
 
@@ -150,12 +146,8 @@ class PrimaryFragment(): BaseFragment(),AdapterView.OnItemSelectedListener,Anima
         override fun onPostExecute(result: String?) {
             if (!TextUtils.isEmpty(result)) {
                 val model = Gson().fromJson(result,Model::class.java)
-                populateRecyclerView(model)
+                appContext?.notifySecondaryFragment(model)
             }
         }
-    }
-
-    private fun populateRecyclerView(model: Model){
-
     }
 }

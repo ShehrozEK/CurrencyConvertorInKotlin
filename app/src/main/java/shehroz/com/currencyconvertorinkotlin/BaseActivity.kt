@@ -4,6 +4,7 @@ import android.content.Context
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
@@ -11,6 +12,11 @@ import kotlin.collections.HashMap
 
 
 open class BaseActivity : AppCompatActivity(),AppContext {
+    override fun notifySecondaryFragment(model:Model) {
+        val secondaryFragment  = supportFragmentManager.findFragmentById(R.id.secondaryFragment) as SecondaryFragment
+        secondaryFragment.populateRecyclerView(model)
+    }
+
     override fun loadFragment(layoutId: Int, fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(layoutId, fragment)
