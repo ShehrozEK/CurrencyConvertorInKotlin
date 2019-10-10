@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Display
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,7 +27,6 @@ class SecondaryFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var earthView: ImageView
     private lateinit var loading_gif: View
-    private lateinit var appContext: AppContext
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -38,8 +38,10 @@ class SecondaryFragment : Fragment() {
         return view
     }
 
-    fun populateRecyclerView(model: Model){
+    fun populateRecyclerView(context: Context,model: Model){
         loading_gif.visibility = View.VISIBLE
-
+        earthView.visibility = View.VISIBLE
+     //   recyclerView.adapter = RecyclerViewAdapter(context,0,model)
+        earthView.visibility = View.GONE
     }
 }
