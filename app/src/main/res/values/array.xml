@@ -133,7 +133,7 @@
     <string-array name="ISK">
         <item>ICELAND</item>
         <item>@drawable/iceland</item>
-        <item>Iceland Krona</item>
+        <item>Icelandic Króna</item>
     </string-array>
     <string-array name="JPY">
         <item>JAPAN</item>

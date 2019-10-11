@@ -12,11 +12,10 @@ import kotlin.collections.HashMap
 
 
 open class BaseActivity : AppCompatActivity(),AppContext {
-    override fun notifySecondaryFragment(model:Model) {
+    override fun notifySecondaryFragment(model:Model,amount:String) {
         val secondaryFragment  = supportFragmentManager.findFragmentById(R.id.secondaryFragment) as SecondaryFragment
-        secondaryFragment.populateRecyclerView(model)
+        secondaryFragment.populateRecyclerView(getContext(),model,amount)
     }
-
     override fun loadFragment(layoutId: Int, fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(layoutId, fragment)
@@ -25,7 +24,6 @@ open class BaseActivity : AppCompatActivity(),AppContext {
     override fun showToast(text: String,duration: Int) {
         Toast.makeText(this,text, duration).show()
     }
-
     override fun getContext(): Context {
         return applicationContext
     }

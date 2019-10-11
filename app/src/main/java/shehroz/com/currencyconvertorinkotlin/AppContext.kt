@@ -8,5 +8,5 @@ interface AppContext {
     fun loadFragment(layoutId : Int, fragment : Fragment)
     fun showToast(text : String,duration:Int)
     fun getContext(): Context
-    fun notifySecondaryFragment(model: Model)
+    fun notifySecondaryFragment(model: Model,amount:String)
 }

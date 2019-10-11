@@ -121,7 +121,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
             }
             typedArray.recycle()
         }
-        return treeMap.toList().sortedBy { (_,country)-> country.countryName}.toMap()
+        return treeMap.toList().sortedBy {(_,country)-> country.countryName}.toMap()
     }
 
     private fun formURL(urlParameter:String): URL {
@@ -146,7 +146,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
         override fun onPostExecute(result: String?) {
             if (!TextUtils.isEmpty(result)) {
                 val model = Gson().fromJson(result,Model::class.java)
-                appContext?.notifySecondaryFragment(model)
+                appContext?.notifySecondaryFragment(model,currencyAmount.text.toString())
             }
         }
     }
