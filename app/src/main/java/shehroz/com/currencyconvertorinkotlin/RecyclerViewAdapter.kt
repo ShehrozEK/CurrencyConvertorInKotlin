@@ -25,7 +25,7 @@ class RecyclerViewAdapter(context: Context,model: Model,amount:String) : Recycle
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val key = model.rates.keys.toList().get(position)
+        val key = model.rates.keys.toList().sorted().get(position)
         val value = model.rates.get(key) as Double
         val baseArrName = context.resources.getIdentifier(model.base,"array",context.packageName)
         val arrName = context.resources.getIdentifier(key,"array",context.packageName)

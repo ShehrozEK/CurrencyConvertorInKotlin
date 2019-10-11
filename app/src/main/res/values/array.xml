@@ -53,7 +53,7 @@
     <string-array name="CNY">
         <item>CHINA</item>
         <item>@drawable/china</item>
-        <item>Yuan Renminbi</item>
+        <item>Chinese Yuan</item>
     </string-array>
     <string-array name="COP">
         <item>COLOMBIA</item>
@@ -88,7 +88,7 @@
     <string-array name="FJD">
         <item>FIJI</item>
         <item>@drawable/fiji</item>
-        <item>Fiji Dollar</item>
+        <item>Fijian Dollar</item>
     </string-array>
     <string-array name="GBP">
         <item>GUERNSEY</item>
@@ -123,7 +123,7 @@
     <string-array name="ILS">
         <item>ISRAEL</item>
         <item>@drawable/israel</item>
-        <item>New Israeli Sheqel</item>
+        <item>Israeli New Shekel</item>
     </string-array>
     <string-array name="INR">
         <item>INDIA</item>
@@ -193,7 +193,7 @@
     <string-array name="PLN">
         <item>POLAND</item>
         <item>@drawable/poland</item>
-        <item>Polish Zloty</item>
+        <item>Poland Złoty</item>
     </string-array>
     <string-array name="PYG">
         <item>PARAGUAY</item>
@@ -248,7 +248,7 @@
     <string-array name="UYU">
         <item>URUGUAY</item>
         <item>@drawable/uruguay</item>
-        <item>Peso Uruguayo</item>
+        <item>Uruguayan Peso</item>
     </string-array>
     <string-array name="VND">
         <item>VIETNAM</item>

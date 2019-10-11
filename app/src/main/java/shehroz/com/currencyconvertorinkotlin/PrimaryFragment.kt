@@ -34,9 +34,9 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
     lateinit var currencyAmount : EditText
     lateinit var currencyAmountViewGroup: LinearLayout
     lateinit var blinkAnim : Animation
+    lateinit var keyboard : InputMethodManager
     var simpleCursorAdapter : SpinnerCustomAdapter? = null
     var treeMap: TreeMap<String, Country> = TreeMap()
-
     override fun onNothingSelected(p0: AdapterView<*>?) {}
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -55,6 +55,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
         currencyAmount = view.findViewById<EditText>(R.id.amount)
         currencyAmountViewGroup = view.findViewById<LinearLayout>(R.id.currencyAmountViewGroup)
         val countrySpinner = view.findViewById<Spinner>(R.id.countrySpinner)
+        keyboard = context!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         simpleCursorAdapter = SpinnerCustomAdapter(context!!.applicationContext,getCountriesHashMap())
         countrySpinner.adapter = simpleCursorAdapter
         countrySpinner.onItemSelectedListener = this
@@ -68,6 +69,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
                 currencyAmountViewGroup.startAnimation(blinkAnim)
             }
             else{
+                keyboard.hideSoftInputFromWindow(it.windowToken,0)
                 val asyncTask = RunInBackground()
                 asyncTask.execute(formURL(currencyTextView.text.toString()))
             }
@@ -84,7 +86,6 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
             errorTextView.visibility = View.GONE
             currencyAmountViewGroup.setBackgroundResource(0)
             currencyAmount.requestFocus()
-            val keyboard = context!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             keyboard.showSoftInput(currencyAmount,InputMethodManager.SHOW_IMPLICIT)
         }
     }
