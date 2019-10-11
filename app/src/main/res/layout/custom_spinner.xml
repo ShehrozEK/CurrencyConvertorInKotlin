@@ -4,22 +4,23 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:weightSum="2">
-
     <ImageView
         android:id="@+id/countryFlag"
         android:layout_width="0dp"
         android:layout_height="35dp"
         android:layout_weight="0.3"
         android:contentDescription="@string/country_flag_content_description"/>
-
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.05" />
     <TextView
         android:id="@+id/countryName"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1.0"
+        android:layout_weight="0.95"
         android:gravity="center_vertical"
         android:textStyle="bold" />
-
     <TextView
         android:id="@+id/countryCurrency"
         android:layout_width="0dp"
@@ -32,6 +33,5 @@
     <Space
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.1"
-        />
+        android:layout_weight="0.1" />
 </LinearLayout>

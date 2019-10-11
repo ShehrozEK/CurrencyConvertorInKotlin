@@ -29,16 +29,16 @@ class RecyclerViewAdapter(context: Context,model: Model,amount:String) : Recycle
         val value = model.rates.get(key) as Double
         val baseArrName = context.resources.getIdentifier(model.base,"array",context.packageName)
         val arrName = context.resources.getIdentifier(key,"array",context.packageName)
-        if(!baseArrName.equals(arrName)) {
+        if(baseArrName != arrName) {
             val countries = context.resources.getStringArray(arrName) as Array<String>
-            holder.countryName.setText(countries[0])
+            holder.countryName.text = countries[0]
             holder.countryName.setTextColor(Color.DKGRAY)
-            holder.countryCurrency.setText(key)
+            holder.countryCurrency.text = key
             val countryFlagRes = context.resources.getIdentifier(countries[1].split("drawable/")[1].split(".")[0], "drawable", context.packageName)
             holder.countryFlag.setImageResource(countryFlagRes)
             val baseCountry = context.resources.getStringArray(baseArrName) as Array<String>
-            holder.from.setText(amount+" "+baseCountry[2]+" equals to")
-            holder.to.setText((amount.toDouble()*value).toFloat().toString()+" "+countries[2])
+            holder.from.text = amount+" "+baseCountry[2]+" equals to"
+            holder.to.text = (amount.toDouble()*value).toFloat().toString()+" "+countries[2]
         }
     }
 

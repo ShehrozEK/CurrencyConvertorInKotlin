@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-CurrencyConvertorInKotlin.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-CurrencyConvertorInKotlin.iml" />
       <module fileurl="file://$PROJECT_DIR$/CurrencyConvertorInKotlin.iml" filepath="$PROJECT_DIR$/CurrencyConvertorInKotlin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/CurrencyConvertorInKotlin-app.iml" filepath="$PROJECT_DIR$/app/CurrencyConvertorInKotlin-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

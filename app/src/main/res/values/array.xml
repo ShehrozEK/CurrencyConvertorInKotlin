@@ -66,8 +66,8 @@
         <item>Czech Koruna</item>
     </string-array>
     <string-array name="DKK">
-        <item>SWEDEN</item>
-        <item>@drawable/sweden</item>
+        <item>DENMARK</item>
+        <item>@drawable/denmark</item>
         <item>Danish Krone</item>
     </string-array>
     <string-array name="DOP">
