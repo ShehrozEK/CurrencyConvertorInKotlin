@@ -9,5 +9,5 @@ interface AppContext {
     fun showToast(text : String,duration:Int)
     fun getContext(): Context
     fun notifySecondaryFragment(model: Model,amount:String)
-    fun checkNetworkConnectivity()
+    fun checkNetworkConnectivity():Boolean
 }

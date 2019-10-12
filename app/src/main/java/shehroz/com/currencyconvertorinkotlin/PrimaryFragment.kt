@@ -62,16 +62,17 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
         blinkAnim = AnimationUtils.loadAnimation(context,R.anim.blink)
         blinkAnim.setAnimationListener(this)
         view.findViewById<Button>(R.id.convert).setOnClickListener(View.OnClickListener {
-            if(currencyAmount.text.isEmpty()){
-                errorTextView.visibility = View.VISIBLE
-                currencyAmountViewGroup.setBackgroundResource(R.drawable.error_bg)
-                currencyAmount.clearFocus()
-                currencyAmountViewGroup.startAnimation(blinkAnim)
-            }
-            else{
-                keyboard.hideSoftInputFromWindow(it.windowToken,0)
-                val asyncTask = RunInBackground()
-                asyncTask.execute(formURL(currencyTextView.text.toString()))
+            if (appContext!!.checkNetworkConnectivity()) {
+                if (currencyAmount.text.isEmpty()) {
+                    errorTextView.visibility = View.VISIBLE
+                    currencyAmountViewGroup.setBackgroundResource(R.drawable.error_bg)
+                    currencyAmount.clearFocus()
+                    currencyAmountViewGroup.startAnimation(blinkAnim)
+                } else {
+                    keyboard.hideSoftInputFromWindow(it.windowToken, 0)
+                    val asyncTask = RunInBackground()
+                    asyncTask.execute(formURL(currencyTextView.text.toString()))
+                }
             }
         })
         currencyAmount.addTextChangedListener(textWatcher)

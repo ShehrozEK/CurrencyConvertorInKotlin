@@ -7,4 +7,5 @@
     <string name="country_flag_content_description">image of flag</string>
     <string name="loading_content_description">gif image of revolving earth</string>
     <string name="url">https://api.exchangerate-api.com/v4/latest/</string>
+    <integer name="interval">60000</integer>
 </resources>
