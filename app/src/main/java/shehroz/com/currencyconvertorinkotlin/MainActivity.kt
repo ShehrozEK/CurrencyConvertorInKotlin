@@ -1,8 +1,11 @@
 package shehroz.com.currencyconvertorinkotlin
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.bumptech.glide.manager.SupportRequestManagerFragment
 
 class MainActivity : BaseActivity() {
     lateinit var handler : Handler

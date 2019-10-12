@@ -1,6 +1,7 @@
 package shehroz.com.currencyconvertorinkotlin
 
 import android.content.Context
+import android.content.res.Configuration
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.widget.Toast
@@ -47,5 +48,10 @@ open class BaseActivity : AppCompatActivity(),AppContext {
     }
     override fun getContext(): Context {
         return applicationContext
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        val fragment = supportFragmentManager.findFragmentById(R.id.secondaryFragment) as SecondaryFragment
     }
 }
