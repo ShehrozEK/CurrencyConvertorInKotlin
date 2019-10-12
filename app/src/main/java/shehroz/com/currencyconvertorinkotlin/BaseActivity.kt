@@ -49,9 +49,4 @@ open class BaseActivity : AppCompatActivity(),AppContext {
     override fun getContext(): Context {
         return applicationContext
     }
-
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        val fragment = supportFragmentManager.findFragmentById(R.id.secondaryFragment) as SecondaryFragment
-    }
 }
