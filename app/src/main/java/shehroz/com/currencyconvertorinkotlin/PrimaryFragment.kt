@@ -29,6 +29,7 @@ import java.util.*
 
 class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation.AnimationListener {
     var appContext:AppContext? = null
+    var asyncTask : AsyncTask<URL, Void, String>? = null
     lateinit var currencyTextView : TextView
     lateinit var errorTextView: TextView
     lateinit var currencyAmount : EditText
@@ -70,8 +71,8 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
                     currencyAmountViewGroup.startAnimation(blinkAnim)
                 } else {
                     keyboard.hideSoftInputFromWindow(it.windowToken, 0)
-                    val asyncTask = RunInBackground()
-                    asyncTask.execute(formURL(currencyTextView.text.toString()))
+                    asyncTask = RunInBackground()
+                    asyncTask!!.execute(formURL(currencyTextView.text.toString()))
                 }
             }
         })
@@ -139,6 +140,18 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
             return scanner.next()
         }
         return ""
+    }
+
+    private fun isAsyncTaskRunning():Boolean{
+        if(asyncTask != null && (asyncTask!!.status == AsyncTask.Status.RUNNING)){
+            return true
+        }
+        return false
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        if(appContext!=null)appContext=null
     }
 
     inner class RunInBackground : AsyncTask<URL, Void, String>() {

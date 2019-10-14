@@ -31,15 +31,16 @@ class SecondaryFragment : Fragment() {
     private lateinit var earthView: ImageView
     private lateinit var loading_gif: View
     private lateinit var adapter: RecyclerViewAdapter
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                          savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_secondary, container, false) as View
         recyclerView = view.findViewById(R.id.countries)
         loading_gif = view.findViewById(R.id.loading)
         earthView = view.findViewById(R.id.earthView)
-        recyclerView.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
-        recyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
+        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        recyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         Glide.with(this).asGif().load(R.drawable.earth).into(earthView)
         return view
     }
