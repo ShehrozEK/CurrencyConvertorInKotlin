@@ -10,8 +10,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.marginLeft
 import androidx.recyclerview.widget.RecyclerView
+import java.io.Serializable
 
-class RecyclerViewAdapter(context: Context,model: Model,amount:String) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
+class RecyclerViewAdapter(context: Context,model: Model,amount:String) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(),Serializable{
     private var model  = model
     private var context  = context
     private var amount = amount

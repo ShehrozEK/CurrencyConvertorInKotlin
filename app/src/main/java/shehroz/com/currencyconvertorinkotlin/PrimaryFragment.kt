@@ -70,6 +70,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
                     currencyAmount.clearFocus()
                     currencyAmountViewGroup.startAnimation(blinkAnim)
                 } else {
+                    currencyAmount.clearFocus()
                     keyboard.hideSoftInputFromWindow(it.windowToken, 0)
                     asyncTask = RunInBackground()
                     asyncTask!!.execute(formURL(currencyTextView.text.toString()))
