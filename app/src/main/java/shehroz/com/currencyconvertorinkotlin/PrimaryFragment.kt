@@ -69,7 +69,12 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
                     currencyAmountViewGroup.setBackgroundResource(R.drawable.error_bg)
                     currencyAmount.clearFocus()
                     currencyAmountViewGroup.startAnimation(blinkAnim)
-                } else {
+                }
+                else {
+                    if(isAsyncTaskRunning()){
+                        asyncTask!!.cancel(true)
+                        asyncTask = null
+                    }
                     currencyAmount.clearFocus()
                     keyboard.hideSoftInputFromWindow(it.windowToken, 0)
                     asyncTask = RunInBackground()
