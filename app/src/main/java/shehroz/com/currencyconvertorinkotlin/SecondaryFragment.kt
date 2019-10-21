@@ -19,7 +19,7 @@ class SecondaryFragment : Fragment() {
     var adapter: RecyclerViewAdapter? = null
     private val serializableKey : String = "Adapter"
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                          savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_secondary, container, false) as View
         recyclerView = view.findViewById(R.id.countries)

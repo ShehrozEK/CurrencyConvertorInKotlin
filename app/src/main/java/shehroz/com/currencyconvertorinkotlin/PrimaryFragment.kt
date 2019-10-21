@@ -1,27 +1,21 @@
 package shehroz.com.currencyconvertorinkotlin
 
 import android.content.Context
-import android.graphics.PorterDuff
 import android.os.AsyncTask
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.inputmethod.InputMethodManager
 import android.widget.*
-import androidx.core.content.getSystemService
-import androidx.core.widget.addTextChangedListener
-import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
-import java.io.IOException
+import kotlinx.android.synthetic.main.fragment_primary.*
 import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
@@ -30,12 +24,9 @@ import java.util.*
 class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation.AnimationListener {
     var appContext:AppContext? = null
     var asyncTask : AsyncTask<URL, Void, String>? = null
-    lateinit var currencyTextView : TextView
-    lateinit var errorTextView: TextView
-    lateinit var currencyAmount : EditText
-    lateinit var currencyAmountViewGroup: LinearLayout
     lateinit var blinkAnim : Animation
     lateinit var keyboard : InputMethodManager
+    lateinit var currencyAmount : EditText
     var simpleCursorAdapter : SpinnerCustomAdapter? = null
     var treeMap: TreeMap<String, Country> = TreeMap()
     override fun onNothingSelected(p0: AdapterView<*>?) {}
@@ -43,7 +34,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
         if(simpleCursorAdapter!=null){
             val key =  simpleCursorAdapter!!.getItem(p2) as String
-            currencyTextView.text = key
+            currency.text = key
         }
     }
 
@@ -51,10 +42,8 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_primary, container, false) as View
-        currencyTextView = view.findViewById<TextView>(R.id.currency)
-        errorTextView = view.findViewById<TextView>(R.id.error)
+
         currencyAmount = view.findViewById<EditText>(R.id.amount)
-        currencyAmountViewGroup = view.findViewById<LinearLayout>(R.id.currencyAmountViewGroup)
         val countrySpinner = view.findViewById<Spinner>(R.id.countrySpinner)
         keyboard = context!!.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         simpleCursorAdapter = SpinnerCustomAdapter(context!!.applicationContext,getCountriesHashMap())
@@ -65,7 +54,8 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
         view.findViewById<Button>(R.id.convert).setOnClickListener(View.OnClickListener {
             if (appContext!!.checkNetworkConnectivity()) {
                 if (currencyAmount.text.isEmpty()) {
-                    errorTextView.visibility = View.VISIBLE
+                    // ******** Synthetic Binding ********
+                    error.visibility = View.VISIBLE
                     currencyAmountViewGroup.setBackgroundResource(R.drawable.error_bg)
                     currencyAmount.clearFocus()
                     currencyAmountViewGroup.startAnimation(blinkAnim)
@@ -78,7 +68,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
                     currencyAmount.clearFocus()
                     keyboard.hideSoftInputFromWindow(it.windowToken, 0)
                     asyncTask = RunInBackground()
-                    asyncTask!!.execute(formURL(currencyTextView.text.toString()))
+                    asyncTask!!.execute(formURL(currency.text.toString()))
                 }
             }
         })
@@ -91,7 +81,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
     override fun onAnimationEnd(p0: Animation?) {
         if(p0==blinkAnim){
             currencyAmountViewGroup.clearAnimation()
-            errorTextView.visibility = View.GONE
+            error.visibility = View.GONE
             currencyAmountViewGroup.setBackgroundResource(0)
             currencyAmount.requestFocus()
             keyboard.showSoftInput(currencyAmount,InputMethodManager.SHOW_IMPLICIT)
