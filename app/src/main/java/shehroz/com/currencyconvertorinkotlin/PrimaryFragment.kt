@@ -54,7 +54,7 @@ class PrimaryFragment : Fragment(), AdapterView.OnItemSelectedListener,Animation
         view.findViewById<Button>(R.id.convert).setOnClickListener(View.OnClickListener {
             if (appContext!!.checkNetworkConnectivity()) {
                 if (currencyAmount.text.isEmpty()) {
-                    // ******** Synthetic Binding ********
+                    // Notice that I didn't need to call findViewById(), thanks to Synthetic Binding!
                     error.visibility = View.VISIBLE
                     currencyAmountViewGroup.setBackgroundResource(R.drawable.error_bg)
                     currencyAmount.clearFocus()
