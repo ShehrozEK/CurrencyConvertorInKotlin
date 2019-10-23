@@ -22,9 +22,11 @@ class SecondaryFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_secondary, container, false) as View
-        recyclerView = view.findViewById(R.id.countries)
-        loading_gif = view.findViewById(R.id.loading)
-        earthView = view.findViewById(R.id.earthView)
+        with(view){
+            recyclerView = findViewById(R.id.countries)
+            loading_gif  = findViewById(R.id.loading)
+            earthView    = findViewById(R.id.earthView)
+        }
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         recyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         Glide.with(this).asGif().load(R.drawable.earth).into(earthView)

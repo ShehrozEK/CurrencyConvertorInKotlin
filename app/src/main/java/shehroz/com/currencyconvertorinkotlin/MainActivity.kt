@@ -14,7 +14,7 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         handler = Handler()
-        runnable = Runnable(){
+        runnable = Runnable{
             checkNetworkConnectivity()
             handler.postDelayed(runnable,resources.getInteger(R.integer.interval).toLong())
         }

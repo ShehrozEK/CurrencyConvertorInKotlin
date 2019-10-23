@@ -40,8 +40,10 @@ open class BaseActivity : AppCompatActivity(),AppContext {
     }
     override fun loadFragment(layoutId: Int, fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(layoutId, fragment)
-        transaction.commit()
+        with(transaction){
+            replace(layoutId, fragment)
+            commit()
+        }
     }
     override fun showToast(text: String,duration: Int) {
         Toast.makeText(this,text, duration).show()
